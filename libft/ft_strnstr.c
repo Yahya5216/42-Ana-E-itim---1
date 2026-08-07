@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/05 19:39:13 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 15:38:43 by yaydilek         ###   ########.fr       */
+/*   Created: 2026/08/07 16:12:58 by yaydilek          #+#    #+#             */
+/*   Updated: 2026/08/07 16:28:01 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+char	*strnstr(const char *big, const char *little, size_t len)
 {
-	if (64 < c && c < 91)
-		return (1);
-	if (96 < c && c < 123)
-		return (1);
-	if (47 < c && c < 58)
-		return (1);
+	size_t	i;
+	size_t	j;
+
+	if (!little[0])
+		return ((char *)(big));
+	i = 0;
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (little[j] && big[i + j] == little[j] && (i + j) < len)
+		{
+			j++;
+		}
+		if (!little[j])
+		{
+			return ((char *)(&big[i]));
+		}
+		i++;
+	}
 	return (0);
 }

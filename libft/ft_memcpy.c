@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 19:41:50 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/05 22:22:18 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/07 20:08:02 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ void	*memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 	unsigned char *d;
-	const unsigned char *s;
+	unsigned char *s;
 	
 	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
+	s = (unsigned char *)src;
+	
 	i = 0;
 	while (i < n)
 	{

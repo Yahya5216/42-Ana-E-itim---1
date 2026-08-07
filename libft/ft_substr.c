@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/06 02:18:02 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 17:19:40 by yaydilek         ###   ########.fr       */
+/*   Created: 2026/08/07 19:48:39 by yaydilek          #+#    #+#             */
+/*   Updated: 2026/08/07 21:29:12 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	const unsigned char *c1;
-	const unsigned char	*c2;
-
-	c1 = (const unsigned char *)s1;
-	c2 = (const unsigned char *)s2;
-	if (n == 0)
-		return (0);
+	size_t	s_len;
+	char	*d;
+	
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start > s_len)
+		len = 0;
+	if (len > s_len - start)
+		len = s_len - start; 
+	d = (char *)malloc((len + 1) * sizeof(char));
+	if (d == NULL)
+		return (NULL);
 	i = 0;
-	while (c1[i] == c2[i] && i < n - 1)
+	while (i < len)
 	{
+		d[i] = s[start++];
 		i++;
 	}
-	return ((unsigned char)c1[i] - (unsigned char)c2[i]);
+	d[i] = '\0';
+	return (d);
 }

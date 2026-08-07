@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/05 19:39:13 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 15:38:43 by yaydilek         ###   ########.fr       */
+/*   Created: 2026/08/07 17:48:13 by yaydilek          #+#    #+#             */
+/*   Updated: 2026/08/07 19:07:49 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (64 < c && c < 91)
-		return (1);
-	if (96 < c && c < 123)
-		return (1);
-	if (47 < c && c < 58)
-		return (1);
-	return (0);
+    void	*d;
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	d = malloc(nmemb * size);
+	ft_memset(d, 0, sizeof(d));
+	return ((void *)(d));
 }

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/05 19:39:13 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 15:38:43 by yaydilek         ###   ########.fr       */
+/*   Created: 2026/08/07 17:27:46 by yaydilek          #+#    #+#             */
+/*   Updated: 2026/08/07 17:48:42 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	if (64 < c && c < 91)
-		return (1);
-	if (96 < c && c < 123)
-		return (1);
-	if (47 < c && c < 58)
-		return (1);
-	return (0);
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+	while(0 < len)
+	{
+		if ((unsigned char)s[len] == (unsigned char)c)
+			return ((char *)(&s[len]));
+		len--;
+	}
+	if ((unsigned char)s[len] == (unsigned char)c)
+			return ((char *)(&s[len]));
+	return (NULL);
 }
