@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 16:27:52 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/11 14:21:48 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/11 21:25:40 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_putchar_fd(char c, int fd)
 }
 int main()
 {
-int f ;
-f = open("a.txt", O_CREAT | O_WRONLY , 0777);
+int f = 2;
+// f = open("a.txt", O_CREAT | O_WRONLY , 0777);
 
-printf("%d",f);
+// printf("%d",f);
 
 ft_putchar_fd('a',f);
 }
