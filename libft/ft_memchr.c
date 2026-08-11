@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 01:09:34 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/10 18:19:23 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/11 20:47:56 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*memchr(const void *s, int c, size_t n)
 	{
 		if (a[i] == (unsigned char)c)
 			return (void *)(a+i);
-			i++;
+		i++;
 	}
 	return (NULL);
 }

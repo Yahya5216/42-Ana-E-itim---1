@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpm.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/07 15:46:34 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 17:18:32 by yaydilek         ###   ########.fr       */
+/*   Created: 2026/08/11 18:22:11 by yaydilek          #+#    #+#             */
+/*   Updated: 2026/08/11 19:23:47 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t i;
-
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (s1[i] && s1[i] == s2[i] && i < n - 1)
-	{
-		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if (!lst || !del)
+		return ;
+	if (lst->content)
+		del(lst->content);
+	free(lst);
 }

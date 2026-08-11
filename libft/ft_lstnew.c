@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/07 21:36:38 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/11 20:48:55 by yaydilek         ###   ########.fr       */
+/*   Created: 2026/08/11 13:07:43 by yaydilek          #+#    #+#             */
+/*   Updated: 2026/08/11 13:49:54 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void *content)
 {
-	char	*d;
-	size_t	s1_len;
-	size_t	s2_len;
-	size_t	i;
-	size_t	j;
+	t_list	*newnode;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	d = (char *)malloc((s1_len + s2_len) * sizeof(char));
-	if (d == NULL)
+	newnode = (t_list *)malloc(sizeof(t_list));
+	if (!newnode)
 		return (NULL);
-	i = -1;
-	while (++i < s1_len)
-		d[i] = s1[i];
-	j = 0;
-	while (i < s1_len)
-	{
-		d[i] = s2[j++];
-		i++;
-	}
-	d[i] = '\0';
-	return (d);
+	newnode->content = content;
+	newnode->next = NULL;
+	return (newnode);
 }

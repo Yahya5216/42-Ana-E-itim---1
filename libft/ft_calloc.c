@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 17:48:13 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 19:07:49 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/11 18:48:46 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
     void	*d;
 	if (nmemb == 0 || size == 0)
 		return (NULL);
+	if (nmemb > ((size_t) - 1) / size)
+	{
+		return (NULL);	
+	}
 	d = malloc(nmemb * size);
+	if(!d){
+		return (NULL);
+	}
 	ft_memset(d, 0, sizeof(d));
 	return ((void *)(d));
 }
