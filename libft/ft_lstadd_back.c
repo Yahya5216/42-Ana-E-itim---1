@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 14:32:58 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/11 21:17:23 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 22:02:18 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!new || !lst)
 		return ;
-	if (!*lst)
+	if (!(lst[0]))
 	{
 		*lst = new;
 		return ;
 	}
 	newnode = ft_lstlast(*lst);
 	newnode->next = new;
-	new->next = NULL;
 }

@@ -6,16 +6,16 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 02:18:02 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 17:19:40 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 18:35:57 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	const unsigned char *c1;
+	size_t				i;
+	const unsigned char	*c1;
 	const unsigned char	*c2;
 
 	c1 = (const unsigned char *)s1;

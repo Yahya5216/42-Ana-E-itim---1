@@ -6,11 +6,11 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 19:39:32 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/05 19:40:20 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 13:02:00 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if ('A' <= c && c <= 'Z')
 		c += 32;

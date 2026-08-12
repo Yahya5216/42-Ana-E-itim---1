@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 17:27:46 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 17:48:42 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 14:51:15 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		len++;
 	}
-	while(0 < len)
+	while (0 < len)
 	{
 		if ((unsigned char)s[len] == (unsigned char)c)
 			return ((char *)(&s[len]));
 		len--;
 	}
 	if ((unsigned char)s[len] == (unsigned char)c)
-			return ((char *)(&s[len]));
+		return ((char *)(&s[len]));
 	return (NULL);
 }

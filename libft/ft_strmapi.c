@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 16:26:44 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/11 21:20:56 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 19:16:44 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    size_t	i;
-	char	*d;
-	size_t	len;
+	unsigned int	i;
+	char			*d;
+	size_t			len;
 
+	if (!s || !f)
+		return (NULL);
 	len = ft_strlen(s);
 	d = (char *)malloc((len + 1) * sizeof(char));
 	if (!d)

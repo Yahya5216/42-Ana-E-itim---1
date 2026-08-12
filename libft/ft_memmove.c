@@ -6,13 +6,13 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 00:42:06 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/10 18:18:24 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:39:13 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t				i;
 	unsigned char		*d;

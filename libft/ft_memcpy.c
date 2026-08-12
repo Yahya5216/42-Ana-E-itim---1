@@ -6,13 +6,13 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 19:41:50 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/10 18:17:43 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:45:15 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;
 	unsigned char	*d;

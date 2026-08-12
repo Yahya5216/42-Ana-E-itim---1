@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/12 14:42:41 by yaydilek          #+#    #+#             */
+/*   Updated: 2026/08/12 19:29:40 by yaydilek         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	return_len(long n)
+static size_t	return_len(long n)
 {
 	size_t	len;
 
@@ -21,7 +32,7 @@ size_t	return_len(long n)
 	return (len);
 }
 
-void	fill_to_char(long nb, char *d, size_t len)
+static void	fill_to_char(long nb, char *d, size_t len)
 {
 	if (nb < 0)
 	{
@@ -40,7 +51,7 @@ char	*ft_itoa(int n)
 	char	*d;
 	size_t	len;
 	long	nb;
-	
+
 	nb = n;
 	len = return_len(nb);
 	d = (char *)malloc((len + 1) * sizeof(char));

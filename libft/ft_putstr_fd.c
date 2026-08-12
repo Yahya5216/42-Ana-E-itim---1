@@ -6,15 +6,15 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 16:55:17 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/10 17:51:56 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 14:36:18 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

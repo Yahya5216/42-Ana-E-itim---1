@@ -6,11 +6,11 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 19:39:34 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/05 19:39:39 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 13:01:54 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	tolupper(int c)
+int	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
 		c -= 32;

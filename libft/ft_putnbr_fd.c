@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/10 17:52:23 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/10 20:58:37 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 14:35:10 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
-	
+
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);

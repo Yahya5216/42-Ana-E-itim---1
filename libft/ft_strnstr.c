@@ -6,13 +6,13 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 16:12:58 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/07 16:28:01 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/12 13:03:04 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
