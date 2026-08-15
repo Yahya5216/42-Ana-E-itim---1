@@ -6,7 +6,7 @@
 /*   By: yaydilek <yaydilek@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:42:14 by yaydilek          #+#    #+#             */
-/*   Updated: 2026/08/12 19:08:39 by yaydilek         ###   ########.fr       */
+/*   Updated: 2026/08/13 13:12:22 by yaydilek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,31 +63,46 @@ static void	clear_all(char **d)
 	free(d);
 }
 
+static char	*fill_word(char const *s, char c, size_t *j)
+{
+	char	*word;
+	size_t	word_len;
+
+	while (s[*j] && s[*j] == c)
+		(*j)++;
+	word_len = find_word_len(s, c, *j);
+	word = (char *)malloc((word_len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	ft_strlcpy(word, &s[*j], word_len + 1);
+	*j += word_len;
+	return (word);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**d;
 	size_t	i;
 	size_t	j;
-	size_t	word_len;
+	size_t	word_count;
 
-	d = (char **)ft_calloc((find_words_count(s, c) + 1), sizeof(char *));
+	if (!s)
+		return (NULL);
+	word_count = find_words_count(s, c);
+	d = (char **)ft_calloc((word_count + 1), sizeof(char *));
 	if (!d)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (i < find_words_count(s, c))
+	while (i < word_count)
 	{
-		while (s[j] && s[j] == c)
-			j++;
-		word_len = find_word_len(s, c, j);
-		d[i] = (char *)malloc((word_len + 1) * sizeof(char));
+		d[i] = fill_word(s, c, &j);
 		if (!d[i])
 		{
 			clear_all(d);
 			return (NULL);
 		}
-		ft_strlcpy(d[i++], &s[j], word_len + 1);
-		j += word_len;
+		i++;
 	}
 	return (d);
 }
