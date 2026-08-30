@@ -10,8 +10,10 @@ static int ft_print_ptr_hex(unsigned long n)
     len = 0;
     base = "0123456789abcdef";
     if (n > 15)
+    {
         len += ft_print_ptr_hex(n / 16);
-	c = base[n % 16];
+    }
+    c = base[n % 16];
     write(1, &c, 1);
     len++;
     return (len);
