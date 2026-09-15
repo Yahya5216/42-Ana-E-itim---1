@@ -4,6 +4,6 @@
 
 int main(void)
 {
-    printf("%d\n", printf("%% %%% %%%"));
-    printf("%d\n", ft_printf("%% %%% %%%"));
+    printf("%d\n", printf("yahya %z yahya"));
+    printf("%d\n", ft_printf("yahya %z yahya"));
 }
