@@ -20,7 +20,7 @@ void	pa(t_node **a, t_node **b, t_benchmark *bench)
 		return ;
 	temp = pop(b);
 	push(a, temp);
-	printf_count_only(bench, "pa\n", 3);
+	write(bench, "pa\n", 3);
 	benchmark_count(bench, OP_PA);
 }
 
