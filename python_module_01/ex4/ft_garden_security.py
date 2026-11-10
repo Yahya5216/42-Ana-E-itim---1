@@ -41,9 +41,12 @@ class Plant:
 
     def get_age(self) -> int:
         return self._current_age
-    
+
     def show(self) -> None:
-        print(f"Current state: {self._name}: {self._height}cm, {self._current_age} days old")
+        print(
+            f"Current state: {self._name}: {self._height}cm, "
+            f"{self._current_age} days old"
+            )
 
 
 def ft_garden_security() -> None:
