@@ -1,30 +1,39 @@
 class Plant:
     def __init__(self, name: str, height: float, current_age: int) -> None:
-        self._name = ""
+        self._name = name
+        self._name = self._name.capitalize()
         self._height = 0.0
         self._current_age = 0
 
-        self._name = name
-        self._height = height
-        self._current_age = current_age
-        print(f"Plant created: {self._name}: {self._height}cm, {self._current_age} days old")
+        if height >= 0:
+            self._height = height
+        else:
+            print(f"{self._name}: Error, height can't be negative")
+
+        if current_age >= 0:
+            self._current_age = current_age
+        else:
+            print(f"{self._name}: Error, age can't be negative")
+
+        print(
+            f"Plant created: {self._name}: "
+            f"{self._height}cm, {self._current_age} days old"
+        )
 
     def set_height(self, height: float) -> None:
         if height >= 0:
             self._height = height
             print(f"Height updated: {round(self._height)}cm")
         else:
-            name = self._name.capitalize()
-            print(f"{name}: Error, height can't be negative")
+            print(f"{self._name}: Error, height can't be negative")
             print("Height update rejected")
 
-    def set_age(self, current_age: float) -> None:
+    def set_age(self, current_age: int) -> None:
         if current_age >= 0:
             self._current_age = current_age
             print(f"Age updated: {self._current_age} days")
         else:
-            name = self._name.capitalize()
-            print(f"{name}: Error, age can't be negative")
+            print(f"{self._name}: Error, age can't be negative")
             print("Age update rejected")
 
     def get_height(self) -> float:
@@ -34,8 +43,7 @@ class Plant:
         return self._current_age
     
     def show(self) -> None:
-        plant_name = self._name.capitalize()
-        print(f"Current state: {plant_name}: {self._height}cm, {self._current_age} days old")
+        print(f"Current state: {self._name}: {self._height}cm, {self._current_age} days old")
 
 
 def ft_garden_security() -> None:

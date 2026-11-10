@@ -21,14 +21,16 @@ def ft_plant_growth() -> None:
     rose.height = 25.0
     rose.current_age = 30
 
+    initial_height = rose.height
+
     print("=== Garden Plant Registry ===")
     rose.show()
     for day in range(1, 8):
         rose.age()
         rose.grow()
         print(f"=== Day {day} ===")
-        print(f"Rose: {rose.height}cm, {rose.current_age} days old")
-    total_growth = (0.5 * day)
+        rose.show()
+    total_growth = rose.height - initial_height
     print(f"Growth this week: {total_growth}cm")
 
 
