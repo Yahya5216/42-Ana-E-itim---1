@@ -16,8 +16,13 @@ def consume_event(
 ) -> typing.Generator[tuple[str, str], None, None]:
     while len(events) != 0:
         random_index = random.randint(0, len(events) - 1)
-        random_event = events.pop(random_index)
-        yield (random_event)
+        random_event = events[random_index]
+
+        events[:] = (
+                    events[:random_index] +
+                    events[random_index + 1:]
+                )
+        yield random_event
 
 
 def main() -> None:
@@ -29,7 +34,7 @@ def main() -> None:
 
     events: list[tuple[str, str]] = []
     for i in range(10):
-        events.append(next(stream))
+        events += [next(stream)]
     print(f"Built list of 10 events: {events}")
 
     for event in consume_event(events):
