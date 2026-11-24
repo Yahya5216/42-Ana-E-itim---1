@@ -13,6 +13,7 @@ def load_config() -> dict[str, str]:
         "ZION_ENDPOINT": os.environ.get("ZION_ENDPOINT", ""),
     }
 
+
 def find_missing(config: dict[str, str]) -> list[str]:
     missing: list[str] = []
     for key in ("DATABASE_URL", "API_KEY", "ZION_ENDPOINT"):
@@ -66,7 +67,7 @@ def main() -> None:
     missing = find_missing(config)
     if missing:
         if config["MATRIX_MODE"] == "production":
-            label = "ERROR" 
+            label = "ERROR"
         else:
             label = "WARNING"
         print(f"\n{label}: missing configuration: {', '.join(missing)}")
